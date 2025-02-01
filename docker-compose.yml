@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  backend:
+    build: 
+      context: ./timetrack
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgres://user:password@db:5432/timetrack
+      - DEBUG=1
+    depends_on:
+      - db
+    volumes:
+      - ./timetrack:/app
+
+  frontend:
+    build: 
+      context: ./timetrack-ui
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000/api
+    volumes:
+      - ./timetrack-ui:/app
+      - /app/node_modules
+      - /app/.next
+    depends_on:
+      - backend
+
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=timetrack
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
