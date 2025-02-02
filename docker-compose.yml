@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   backend:
     build: 
@@ -8,8 +10,18 @@ services:
     environment:
       - DATABASE_URL=postgres://user:password@db:5432/timetrack
       - DEBUG=1
+      - POSTGRES_DB=timetrack
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_HOST=db
+      # Environment variables for create_superuser.py and create_test_data.py
+      - DJANGO_SUPERUSER_USERNAME=admin
+      - DJANGO_SUPERUSER_EMAIL=admin@example.com
+      - DJANGO_SUPERUSER_PASSWORD=admin123!
+      - DJANGO_SECRET_KEY=your-secret-key-here
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     volumes:
       - ./timetrack:/app
 
@@ -38,6 +50,11 @@ services:
       - postgres_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U user -d timetrack"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
 volumes:
   postgres_data:

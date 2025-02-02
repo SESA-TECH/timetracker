@@ -47,12 +47,6 @@ def create_test_data():
             'status': TimeLog.Status.COMPLETED,
             'start_time': datetime.now() - timedelta(hours=2),
             'end_time': datetime.now() - timedelta(hours=1, minutes=15)
-        },
-        {
-            'description': 'Current task',
-            'duration': timedelta(minutes=30),
-            'status': TimeLog.Status.RUNNING,
-            'start_time': datetime.now() - timedelta(minutes=30)
         }
     ]
 
