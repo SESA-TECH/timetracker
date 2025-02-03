@@ -22,7 +22,6 @@ A full-stack time tracking application built with Django (Backend) and Next.js (
   - [Common Issues](#common-issues)
   - [Logs](#logs)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
@@ -204,6 +203,3 @@ docker-compose logs frontend
 3. Commit your changes
 4. Push to the branch
 5. Create a Pull Request
-
-## License
-This project is licensed under the MIT License.
