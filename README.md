@@ -58,7 +58,7 @@ A full-stack time tracking application built with Django (Backend) and Next.js (
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/MNametissa/timetracker.git
+git clone https://github.com/SESA-TECH/timetracker.git
 cd timetracker
 ```
 
