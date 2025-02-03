@@ -37,8 +37,8 @@ A full-stack time tracking application built with Django (Backend) and Next.js (
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd dev-secu
+git clone https://github.com/MNametissa/timetracker.git
+cd timetracker
 ```
 
 2. Start the application:
@@ -61,8 +61,8 @@ The application will:
 
 Default superuser credentials:
 - Username: admin
-- Email: admin@example.com
-- Password: admin123!
+- Email: admin@timetrack.com
+- Password: Admin123!
 
 ## Development
 
