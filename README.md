@@ -2,6 +2,28 @@
 
 A full-stack time tracking application built with Django (Backend) and Next.js (Frontend). This application allows users to track their time spent on various tasks, with features like real-time tracking, manual time entry, and detailed reporting.
 
+## Table of Contents
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+  - [Backend](#backend)
+  - [Frontend](#frontend)
+- [Quick Start with Docker](#quick-start-with-docker)
+  - [Prerequisites](#prerequisites)
+  - [Installation Steps](#installation-steps)
+  - [Access the Application](#access-the-application)
+- [Development](#development)
+  - [Project Structure](#project-structure)
+- [Personal Reflection](#personal-reflection)
+  - [Time Spent](#time-spent)
+  - [Satisfaction Points](#satisfaction-points)
+  - [Areas for Improvement](#areas-for-improvement)
+  - [Future Enhancements](#future-enhancements)
+- [Troubleshooting](#troubleshooting)
+  - [Common Issues](#common-issues)
+  - [Logs](#logs)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Features
 
 - 🔐 User Authentication (Register/Login)
